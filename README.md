@@ -1,109 +1,109 @@
-# Example Forge Mod for Minecraft 1.7.10
+# Qz UILib Enhance
 
-[![](https://jitpack.io/v/GTNewHorizons/ExampleMod1.7.10.svg)](https://jitpack.io/#GTNewHorizons/ExampleMod1.7.10)
-[![](https://github.com/GTNewHorizons/ExampleMod1.7.10/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/GTNewHorizons/ExampleMod1.7.10/actions/workflows/build-and-test.yml)
+<p align="center">
 
-An example mod for Minecraft 1.7.10 with Forge focussed on a stable, updatable setup.
+<a href="README.zh-CN.md">
+<img src="https://img.shields.io/badge/%E8%AF%AD%E8%A8%80-%E4%B8%AD%E6%96%87-red?style=for-the-badge">
+</a>
 
-<!-- omit in toc -->
-### Table of Contents
+<a href="README.md">
+<img src="https://img.shields.io/badge/Language-English-blue?style=for-the-badge">
+</a>
 
-* [Example Forge Mod for Minecraft 1.7.10](#example-forge-mod-for-minecraft-1710)
-    * [Motivation](#motivation)
-    * [Help! I'm stuck!](#help-im-stuck)
-    * [Getting started](#getting-started)
-    * [Features](#features)
-    * [Files](#files)
-    * [Forge's Access Transformers](#forges-access-transformers)
-    * [Mixins](#mixins)
-    * [Advanced](#advanced)
-    * [Feedback wanted](#feedback-wanted)
+</p>
 
+<p align="center">
 
-### Motivation
+<a href="https://github.com/nhx100218/QzUIlib-Extra/actions/workflows/build.yml">
+<img src="https://github.com/nhx100218/QzUIlib-Extra/actions/workflows/build.yml/badge.svg?branch=main">
+</a>
 
-We had our fair share in struggles with build scripts for Minecraft Forge. There are quite a few pitfalls from non-obvious error messages. This Example Project provides you a build system you can adapt to over 90% of Minecraft Forge mods and can easily be updated if need be.
+<a href="https://github.com/nhx100218/QzUIlib-Extra/releases">
+<img src="https://img.shields.io/github/downloads/nhx100218/QzUIlib-Extra/total?label=Downloads&style=flat">
+</a>
 
-### Help! I'm stuck!
+<a href="https://github.com/nhx100218/QzUIlib-Extra/releases/">
+<img src="https://img.shields.io/github/v/release/nhx100218/QzUIlib-Extra?style=flat">
+</a>
 
-We all have been there! Check out our [FAQ](https://github.com/GTNewHorizons/ExampleMod1.7.10/blob/main/docs/FAQ.md). If that doesn't help, please open an issue.
+<a href="https://raw.githubusercontent.com/nhx100218/QzUIlib-Extra/main/LICENSE">
+<img src="https://img.shields.io/github/license/nhx100218/QzUIlib-Extra?style=flat">
+</a>
 
-### Getting started
+<img src="https://img.shields.io/github/last-commit/nhx100218/QzUIlib-Extra?color=c78aff&label=Last%20Commit&style=flat">
 
-> [!WARNING]
-> Do not clone or fork this repository when creating a new mod. It contains files that are specific to this example project and are not part of the mod template. Use the [project starter](https://github.com/GTNewHorizons/ExampleMod1.7.10/releases/download/master-packages/starter.zip) instead.
+</p>
 
-Creating mod from scratch:
-1. Unzip [project starter](https://github.com/GTNewHorizons/ExampleMod1.7.10/releases/download/master-packages/starter.zip) into project directory.
-2. Replace placeholders in LICENSE-template and rename it to LICENSE, or remove LICENSE-template and put any other license you like on your code. This is an permissive OSS project and we encourage you participate in OSS movement by having permissive license like one in template. You can find out pros and cons of OSS software in [this article](https://www.freecodecamp.org/news/what-is-great-about-developing-open-source-and-what-is-not/)
-3. Ensure your project is under VCS. For example initialise git repository by running `git init; git commit --message "initialized repository"`.
-4. Replace placeholders (edit values in gradle.properties, change example package and class names, etc.)
-5. Run `./gradlew setupDecompWorkspace`
-6. Run `./gradlew build`
-6. Make sure to check out the rest sections of this file.
-7. You are good to go!
+A client-side visual/UX addon for **QzUILib** on GTNH (Minecraft 1.7.10). It layers rounded tooltips, smoother UI motion, chat quality-of-life and a fully self-drawn Material Design 3 config screen on top of QzUILib without forking it.
 
-We also have described guidelines for existing mod [migration](docs/migration.md) and [porting](docs/porting.md)
+## 🌟 Highlights
 
-### Features
+- **Modern Material 3 config screen** — icon + text left navigation, wrapping top tabs, rounded field cards, switches, sliders, segmented buttons and dropdowns, plus a bottom Cancel / Apply / Done bar. All controls are hand-drawn and localized (`en_US` / `zh_CN`).
+- **QzUILib section in the config screen** — one navigation entry that reads/writes QzUILib's own `config/qzuilib-modern.yaml` (chat frame, picker density, font sort order and font sizes) without touching QzUILib's source.
+- **Bundled fonts** — Inter Frozen and Source Han Sans CN are shipped and auto-extracted; a real italic face is included for render-time oblique.
 
- - Updatable: Replace [`build.gradle`](https://github.com/GTNewHorizons/ExampleMod1.7.10/blob/main/build.gradle) with a newer version
- - Optional API artifact (.jar)
- - Optional version replacement in Java files
- - Optional shadowing of dependencies
- - Simplified setup of Mixin and example
- - Scala support (add sources under `src/main/scala/` instead of `src/main/java/`)
- - Optional named developer account for consistent player progression during testing
- - Boilerplate forge mod as starting point
- - Improved warnings for pitfalls
- - Git Tags integration for versioning
- - [Jitpack](https://jitpack.io) CI
- - GitHub CI:
-   - Releasing your artifacts on new tags pushed. Push git tag named after version (e.g. 1.0.0) which will trigger a release of artifacts with according names.
-   - Running smoke test for server startup. On any server crash occurring workflow will fail and print the crash log.
+## ✨ Features
 
-### Files
- - [`build.gradle`](https://github.com/GTNewHorizons/ExampleMod1.7.10/blob/main/build.gradle): This is the core script of the build process. You should not need to tamper with it, unless you are trying to accomplish something out of the ordinary. __Do not touch this file! You will make a future update near impossible if you do so!__
- - [`gradle.properties`](https://github.com/GTNewHorizons/ExampleMod1.7.10/blob/main/gradle.properties): The core configuration file. It includes
- - [`dependencies.gradle[.kts]`](https://github.com/GTNewHorizons/ExampleMod1.7.10/blob/main/dependencies.gradle): Add your mod's dependencies in this file. This is separate from the main build script, so you may replace the [`build.gradle`](https://github.com/SinTh0r4s/ExampleMod1.7.10/blob/main/build.gradle) if an update is available.
- - [`repositories.gradle[.kts]`](https://github.com/GTNewHorizons/ExampleMod1.7.10/blob/main/repositories.gradle): Add your dependencies' repositories. This is separate from the main build script, so you may replace the [`build.gradle`](https://github.com/SinTh0r4s/ExampleMod1.7.10/blob/main/build.gradle) if an update is available.
- - `addon.gradle[.kts]`: Any additional build logic. This is separate from the main build script, so you may replace the [`build.gradle`](https://github.com/SinTh0r4s/ExampleMod1.7.10/blob/main/build.gradle) if an update is available. See [Advanced](#advanced) for more details.
- - [`jitpack.yml`](https://github.com/GTNewHorizons/ExampleMod1.7.10/blob/main/jitpack.yml): Ensures that your mod is available as import over [Jitpack](https://jitpack.io).
- - [`.github/workflows/gradle.yml`](https://github.com/GTNewHorizons/ExampleMod1.7.10/blob/main/.github/workflows/gradle.yml): A simple CI script that will build your mod any time it is pushed to `master` or `main` and publish the result as release in your repository. This feature is free with GitHub if your repository is public.
+### Tooltips
+- Rounded, gradient tooltip rendering with configurable corner radius, border width and four-corner fill / stroke colors.
+- Adaptive border colors (follows item rarity / name color) and an optional animated border color cycle.
+- Integrated with **NEI**, **GregTech (ModularUI2)**, **Tinkers' Construct Smeltery**, **Waila**, **Better Questing** and **Chromatic Tooltips**.
+- Optional centered title and title separator, plus ModularUI2 max-width / no-wrap controls.
 
-### Forge's Access Transformers
+### Interface & motion
+- Screen open / close transition animation (duration, offset, scale).
+- Hold-to-zoom with configurable factor, smoothing and sensitivity slowdown.
+- Smooth scrolling for vanilla lists.
+- Custom text selection highlight (replaces the vanilla XOR box).
+- Text undo / redo (`Ctrl+Z` / `Ctrl+Y`) in text fields.
+- Pause the world when a container is open in singleplayer.
 
-You may activate Forge's Access Transformers by defining a configuration file in `gradle.properties`.
+### Chat
+- Fade / slide-in animation for new chat messages.
+- Sender skin heads in chat.
+- Emoji shortcode conversion (`:name:` → emoji, needs a system emoji font).
 
-Check out the [`example-access-transformers`](https://github.com/GTNewHorizons/ExampleMod1.7.10/tree/example-access-transformers) branch for a working example!
+### Performance
+- Lower framerate and volume while the window is unfocused.
 
-> [!WARNING]
-> Access Transformers are bugged and will deny you any sources for the decompiled Minecraft! Your development environment will still work, but you might face some inconveniences. For example, IntelliJ will not permit searches in dependencies without attached sources.
+## 📦 Requirements
 
-### Mixins
+| Type | Version |
+|------|---------|
+| Minecraft | 1.7.10 (GTNH) |
+| **QzUILib** (`qz_uilib`) | required |
+| Side | Client |
 
-[Mixins](https://github.com/SpongePowered/Mixin) are used to modify vanilla or mod/library code during runtime without having to edit, recompile, and redistribute the original code. For example, mixins can change a hardcoded value, redirect a method call, inject additional code, access private fields/methods, make a class implement your interface, and more. Mixins are an advanced feature which most normal mods will not require.
+## 🚀 Installation
 
-Documentation about Mixin features can be found here: [Mixin Wiki](https://github.com/SpongePowered/Mixin/wiki) and [MixinExtras Wiki](https://github.com/LlamaLad7/MixinExtras/wiki)
+1. Install **QzUILib** into your GTNH `mods/` folder.
+2. Download the latest `qzuilibenhance-*.jar` from [Releases](https://github.com/nhx100218/QzUIlib-Extra/releases).
+3. Drop it into `mods/`.
+4. Launch the game.
 
-There are many examples of mixins in these mods: [Hodgepodge](https://github.com/GTNewHorizons/Hodgepodge) and [Angelica](https://github.com/GTNewHorizons/Angelica)
+## 🔧 Configuration
 
-To enable Mixins in your project, follow one of the example commits:
-- use [normal mixins](https://github.com/GTNewHorizons/ExampleMod1.7.10/commit/beba55615fa8337b7639f0d5b18db6cc8d4826be) for basic and quick registration
-- use [GTNH IMixins](https://github.com/GTNewHorizons/ExampleMod1.7.10/commit/055cd4f18765a421a86c706f53b62116988297e3) (recommended) for the same thing as below, but in a less verbose and more unified manner using the IMixins api
-- use [GTNH Early/Late mixins](https://github.com/GTNewHorizons/ExampleMod1.7.10/commit/c4df59d92164775b69451f3e690239e93d1fc979) to have full control over the registration logic and check for presence of other mods during runtime to load your mixins
+- Forge config: `config/qzuilibenhance.cfg`, edited in-game from the mod list **Config** button or with **Ctrl+K**.
+- The **QzUILib** section of the config screen edits `config/qzuilib-modern.yaml`. Most changes apply on the next launch.
 
-The extra required dependencies are handled automatically after mixins are enabled.
+## 🛠️ Build from Source
 
-### Advanced
+Requirements: JDK 25.
 
-If your project requires custom gradle commands you may add a `addon.gradle[.kts]` to your project. It will be added automatically to the build script. Although we recommend against it, it is sometimes required. When in doubt, feel free to ask us about it. You may break future updates of this build system!
-If you need access to properties modified later in the buildscript, you can also use a `addon.late.gradle[.kts]`.
-For local tweaks that you don't want to commit to Git, like adding extra JVM arguments for testing, use `addon[.late].local.gradle[.kts]`.
+```bash
+./gradlew build
+```
 
-### Feedback wanted
+The output jar is written to `build/libs/`.
 
-If you tried out this build script we would love to head your opinion! Is there any feature missing for you? Did something not work? Please open an issue and we will try to resolve it asap!
+## 🙏 Acknowledgement
 
-Happy modding,\
-[SinTh0r4s](https://github.com/SinTh0r4s), [TheElan](https://github.com/TheElan) and [basdxz](https://github.com/basdxz)
+Bundled with thanks to QzUILib by heiqi, and the GTNH modding toolchain.
+
+## 📄 License
+
+This project is open-sourced under the [MIT License](LICENSE).
+
+## CI Artifact
+
+The GitHub Action builds the mod and uploads the jar as a workflow artifact.
