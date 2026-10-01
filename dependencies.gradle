@@ -1,0 +1,14 @@
+// QzUILib 附属增强模组的依赖。
+// 仅编译期需要这些模组的类型（mixin 目标），运行期由 GTNH 整合包提供，不随产物分发。
+dependencies {
+    compileOnly files('libs/gtnhlib-0.11.51.jar')
+    compileOnly files('libs/modularui2-2.3.91-1.7.10.jar')
+    compileOnly files('libs/TConstruct-1.14.115-GTNH.jar')
+    compileOnly files('libs/Waila-1.19.34.jar')
+    compileOnly files('libs/CodeChickenCore-1.4.22.jar')
+    compileOnly files('libs/NotEnoughItems-2.8.145-GTNH.jar')
+    compileOnly files('libs/BetterQuesting-3.8.87-GTNH.jar')
+    compileOnly files('libs/chromatictooltips-1.0.36-GTNH.jar')
+    compileOnly files('libs/qz_uilib-4.11.1.jar')
+    compileOnly files('libs/lwjgl3ify-3.0.35.jar')
+}

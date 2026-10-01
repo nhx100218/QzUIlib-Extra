@@ -1,0 +1,145 @@
+qzuilibenhance.config.title=QzUILib Enhance
+qzuilibenhance.config.button=Config
+qzuilibenhance.md.on=ON
+qzuilibenhance.md.off=OFF
+qzuilibenhance.md.done=Done
+qzuilibenhance.md.back=Back
+qzuilibenhance.md.hint=Select a category on the left
+qzuilibenhance.md.home=Home
+qzuilibenhance.md.apply=Apply
+qzuilibenhance.md.cancel=Cancel
+qzuilibenhance.md.home.desc=Qz UILib Enhance - rounded tooltips, smooth transitions, chat, zoom and more.
+qzuilibenhance.md.home.hint=Select a category from the left panel.
+
+qzuilibenhance.config.cat.tooltip=Tooltip
+qzuilibenhance.config.tooltip.enabled=Rounded Tooltip
+qzuilibenhance.config.tooltip.enabled.tooltip=Enable rounded tooltip rendering.
+qzuilibenhance.config.tooltip.rounded=Round Corners
+qzuilibenhance.config.tooltip.rounded.tooltip=Use rounded corners.
+qzuilibenhance.config.tooltip.centerTitle=Center Title
+qzuilibenhance.config.tooltip.centerTitle.tooltip=Center the item name line.
+qzuilibenhance.config.tooltip.titleBreak=Title Separator
+qzuilibenhance.config.tooltip.titleBreak.tooltip=Draw a separator under the title.
+qzuilibenhance.config.tooltip.adaptiveColors=Adaptive Colors
+qzuilibenhance.config.tooltip.adaptiveColors.tooltip=Adapt the border color to the item name color.
+qzuilibenhance.config.tooltip.borderColorCycle=Border Color Cycle
+qzuilibenhance.config.tooltip.borderColorCycle.tooltip=Border color cycle in ms, 0 to disable.
+qzuilibenhance.config.tooltip.borderWidth=Border Width
+qzuilibenhance.config.tooltip.borderWidth.tooltip=Tooltip border width.
+qzuilibenhance.config.tooltip.cornerRadius=Corner Radius
+qzuilibenhance.config.tooltip.cornerRadius.tooltip=Tooltip corner radius.
+qzuilibenhance.config.tooltip.modularUiMaxWidth=ModularUI Max Width
+qzuilibenhance.config.tooltip.modularUiMaxWidth.tooltip=ModularUI2 tooltip max line width, 0 for auto.
+qzuilibenhance.config.tooltip.modularUiNoWrap=Disable ModularUI Wrap
+qzuilibenhance.config.tooltip.modularUiNoWrap.tooltip=Disable ModularUI2 automatic text wrapping.
+qzuilibenhance.config.tooltip.fillColor=Fill Color
+qzuilibenhance.config.tooltip.fillColor.tooltip=Background corner colors (ARGB), up to 4.
+qzuilibenhance.config.tooltip.strokeColor=Border Color
+qzuilibenhance.config.tooltip.strokeColor.tooltip=Border corner colors (ARGB), up to 4.
+
+qzuilibenhance.config.cat.waila=Waila
+qzuilibenhance.config.waila.enabled=Rounded Waila
+qzuilibenhance.config.waila.enabled.tooltip=Rounded corners for the Waila HUD box.
+qzuilibenhance.config.waila.cornerRadius=Waila Corner Radius
+qzuilibenhance.config.waila.cornerRadius.tooltip=Waila corner radius.
+qzuilibenhance.config.waila.borderWidth=Waila Border Width
+qzuilibenhance.config.waila.borderWidth.tooltip=Waila border width.
+
+qzuilibenhance.config.cat.smoothscroll=Smooth Scroll
+qzuilibenhance.config.smoothscroll.enabled=Smooth Scrolling
+qzuilibenhance.config.smoothscroll.enabled.tooltip=Smooth scrolling for vanilla lists.
+qzuilibenhance.config.smoothscroll.factor=Smooth Factor
+qzuilibenhance.config.smoothscroll.factor.tooltip=Smooth factor (higher is faster).
+
+qzuilibenhance.config.cat.screentransition=Screen Transition
+qzuilibenhance.config.screentransition.enabled=Transition Animation
+qzuilibenhance.config.screentransition.enabled.tooltip=Animate screen open/close.
+qzuilibenhance.config.screentransition.durationMs=Duration
+qzuilibenhance.config.screentransition.durationMs.tooltip=Transition duration in ms.
+qzuilibenhance.config.screentransition.offset=Offset
+qzuilibenhance.config.screentransition.offset.tooltip=Transition offset in px.
+qzuilibenhance.config.screentransition.scale=Scale
+qzuilibenhance.config.screentransition.scale.tooltip=Transition scale.
+
+qzuilibenhance.config.cat.zoom=Zoom
+qzuilibenhance.config.zoom.enabled=Enable Zoom
+qzuilibenhance.config.zoom.enabled.tooltip=Hold the key to zoom.
+qzuilibenhance.config.zoom.factor=Zoom Factor
+qzuilibenhance.config.zoom.factor.tooltip=Zoom magnification.
+qzuilibenhance.config.zoom.smooth=Smooth Zoom
+qzuilibenhance.config.zoom.smooth.tooltip=Smooth zoom transition.
+qzuilibenhance.config.zoom.speed=Transition Speed
+qzuilibenhance.config.zoom.speed.tooltip=Zoom transition speed.
+qzuilibenhance.config.zoom.sensitivity=Sensitivity Slowdown
+qzuilibenhance.config.zoom.sensitivity.tooltip=Extra sensitivity slowdown while zooming (higher is slower).
+qzuilibenhance.config.zoom.keyCode=Key Code
+qzuilibenhance.config.zoom.keyCode.tooltip=LWJGL key code to trigger zoom (default 46=C).
+
+qzuilibenhance.config.cat.chat=Chat
+qzuilibenhance.config.chat.smoothEnabled=Smooth Messages
+qzuilibenhance.config.chat.smoothEnabled.tooltip=Fade/slide in new chat messages.
+qzuilibenhance.config.chat.durationMs=Fade Duration
+qzuilibenhance.config.chat.durationMs.tooltip=Chat fade-in duration in ms.
+qzuilibenhance.config.chat.offset=Slide Offset
+qzuilibenhance.config.chat.offset.tooltip=Chat slide offset in px.
+qzuilibenhance.config.chat.headsEnabled=Chat Heads
+qzuilibenhance.config.chat.headsEnabled.tooltip=Show sender skin heads in chat.
+qzuilibenhance.config.chat.headSize=Head Size
+qzuilibenhance.config.chat.headSize.tooltip=Head size in px.
+qzuilibenhance.config.chat.headGap=Head Gap
+qzuilibenhance.config.chat.headGap.tooltip=Gap between head and text in px.
+
+qzuilibenhance.config.cat.performance=Performance
+qzuilibenhance.config.performance.unfocusedFramerate=Lower FPS When Unfocused
+qzuilibenhance.config.performance.unfocusedFramerate.tooltip=Limit framerate when the window is unfocused.
+qzuilibenhance.config.performance.unfocusedFramerateLimit=Unfocused FPS Limit
+qzuilibenhance.config.performance.unfocusedFramerateLimit.tooltip=Framerate limit when unfocused.
+qzuilibenhance.config.performance.unfocusedVolume=Lower Volume When Unfocused
+qzuilibenhance.config.performance.unfocusedVolume.tooltip=Lower volume when the window is unfocused.
+qzuilibenhance.config.performance.unfocusedVolumeFactor=Unfocused Volume Factor
+qzuilibenhance.config.performance.unfocusedVolumeFactor.tooltip=Volume multiplier when unfocused.
+
+qzuilibenhance.config.cat.ui=Interface
+qzuilibenhance.config.ui.textUndoEnabled=Text Undo/Redo
+qzuilibenhance.config.ui.textUndoEnabled.tooltip=Ctrl+Z / Ctrl+Y in text fields.
+qzuilibenhance.config.ui.textUndoLimit=Undo History Limit
+qzuilibenhance.config.ui.textUndoLimit.tooltip=Maximum undo history steps.
+qzuilibenhance.config.ui.pauseContainers=Pause on Containers
+qzuilibenhance.config.ui.pauseContainers.tooltip=Pause the world when a container is open in singleplayer.
+
+qzuilibenhance.config.cat.emoji=Emoji
+qzuilibenhance.config.emoji.enabled=Emoji Shortcodes
+qzuilibenhance.config.emoji.enabled.tooltip=Convert :name: shortcodes to emoji in chat (needs a system emoji font).
+
+qzuilibenhance.config.cat.textselection=Text Selection
+qzuilibenhance.config.textselection.selectionEnabled=Custom Selection Highlight
+qzuilibenhance.config.textselection.selectionEnabled.tooltip=Replace the vanilla XOR selection box.
+qzuilibenhance.config.textselection.selectionColor=Selection Color
+qzuilibenhance.config.textselection.selectionColor.tooltip=Selection highlight color (RGB).
+qzuilibenhance.config.textselection.selectionAlpha=Selection Opacity
+qzuilibenhance.config.textselection.selectionAlpha.tooltip=Selection highlight alpha (0-255).
+
+qzuilibenhance.md.nav.home=Home
+qzuilibenhance.md.nav.addon=Enhance
+qzuilibenhance.md.nav.qzuilib=QzUILib
+qzuilibenhance.md.tab.general=General
+qzuilibenhance.md.tab.fontsystem=Font System
+qzuilibenhance.md.tab.fontsize=Font Size
+qzuilibenhance.md.qzuilib.desc=Edit QzUILib's own qzuilib-modern.yaml: chat frame, picker density, font sort and font sizes.
+qzuilibenhance.md.qzuilib.restartHint=Some changes (chat frame, fonts) take effect after a game restart.
+qzuilibenhance.md.qzuilib.missing=qzuilib-modern.yaml not found.
+
+qzuilibenhance.qzuilib.chatFrame=Chat Frame
+qzuilibenhance.qzuilib.chatFrame.tooltip=QzUILib chat frame style.
+qzuilibenhance.qzuilib.chatFrame.custom=Custom
+qzuilibenhance.qzuilib.chatFrame.vanilla=Vanilla
+qzuilibenhance.qzuilib.pickerDensity=Picker Density
+qzuilibenhance.qzuilib.pickerDensity.tooltip=Selector panel density preset.
+qzuilibenhance.qzuilib.pickerDensity.auto=Auto
+qzuilibenhance.qzuilib.pickerDensity.compact=Compact
+qzuilibenhance.qzuilib.pickerDensity.standard=Standard
+qzuilibenhance.qzuilib.pickerDensity.roomy=Roomy
+qzuilibenhance.qzuilib.glyphGenerationSize=Glyph Resolution
+qzuilibenhance.qzuilib.glyphGenerationSize.tooltip=Glyph atlas generation size; higher is sharper but uses more VRAM.
+qzuilibenhance.qzuilib.gameCharSize=Game Char Size
+qzuilibenhance.qzuilib.gameCharSize.tooltip=Default on-screen font size and the basis for width/line height.

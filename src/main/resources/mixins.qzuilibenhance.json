@@ -1,0 +1,11 @@
+{
+  "required": false,
+  "minVersion": "0.8.5-GTNH",
+  "package": "com.gtnh.qzuilibenhance.mixin.center",
+  "refmap": "mixins.qzuilibenhance.refmap.json",
+  "target": "@env(DEFAULT)",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [],
+  "client": [],
+  "server": []
+}

@@ -1,0 +1,145 @@
+qzuilibenhance.config.title=QzUILib 附属增强
+qzuilibenhance.config.button=配置
+qzuilibenhance.md.on=开
+qzuilibenhance.md.off=关
+qzuilibenhance.md.done=完成
+qzuilibenhance.md.back=返回
+qzuilibenhance.md.hint=在左侧选择分类
+qzuilibenhance.md.home=主页
+qzuilibenhance.md.apply=应用
+qzuilibenhance.md.cancel=取消
+qzuilibenhance.md.home.desc=Qz UILib 附属增强：圆角 tooltip、平滑过渡、聊天头像、缩放等。
+qzuilibenhance.md.home.hint=从左侧面板选择分类。
+
+qzuilibenhance.config.cat.tooltip=提示框
+qzuilibenhance.config.tooltip.enabled=圆角提示框
+qzuilibenhance.config.tooltip.enabled.tooltip=启用圆角 tooltip 渲染。
+qzuilibenhance.config.tooltip.rounded=圆角
+qzuilibenhance.config.tooltip.rounded.tooltip=使用圆角。
+qzuilibenhance.config.tooltip.centerTitle=标题居中
+qzuilibenhance.config.tooltip.centerTitle.tooltip=物品名称行居中。
+qzuilibenhance.config.tooltip.titleBreak=标题分隔线
+qzuilibenhance.config.tooltip.titleBreak.tooltip=在标题下绘制分隔线。
+qzuilibenhance.config.tooltip.adaptiveColors=自适应颜色
+qzuilibenhance.config.tooltip.adaptiveColors.tooltip=边框颜色随物品名称颜色变化。
+qzuilibenhance.config.tooltip.borderColorCycle=边框颜色循环
+qzuilibenhance.config.tooltip.borderColorCycle.tooltip=边框颜色循环周期(ms)，0=关闭。
+qzuilibenhance.config.tooltip.borderWidth=边框宽度
+qzuilibenhance.config.tooltip.borderWidth.tooltip=提示框边框宽度。
+qzuilibenhance.config.tooltip.cornerRadius=圆角半径
+qzuilibenhance.config.tooltip.cornerRadius.tooltip=提示框圆角半径。
+qzuilibenhance.config.tooltip.modularUiMaxWidth=ModularUI 最大宽度
+qzuilibenhance.config.tooltip.modularUiMaxWidth.tooltip=ModularUI2 提示框最大折行宽度，0=自动。
+qzuilibenhance.config.tooltip.modularUiNoWrap=禁用 ModularUI 折行
+qzuilibenhance.config.tooltip.modularUiNoWrap.tooltip=禁用 ModularUI2 文本自动折行。
+qzuilibenhance.config.tooltip.fillColor=背景颜色
+qzuilibenhance.config.tooltip.fillColor.tooltip=背景四角颜色(ARGB)，最多 4 个。
+qzuilibenhance.config.tooltip.strokeColor=边框颜色
+qzuilibenhance.config.tooltip.strokeColor.tooltip=边框四角颜色(ARGB)，最多 4 个。
+
+qzuilibenhance.config.cat.waila=Waila
+qzuilibenhance.config.waila.enabled=Waila 圆角
+qzuilibenhance.config.waila.enabled.tooltip=Waila HUD 框使用圆角。
+qzuilibenhance.config.waila.cornerRadius=Waila 圆角半径
+qzuilibenhance.config.waila.cornerRadius.tooltip=Waila 圆角半径。
+qzuilibenhance.config.waila.borderWidth=Waila 边框宽度
+qzuilibenhance.config.waila.borderWidth.tooltip=Waila 边框宽度。
+
+qzuilibenhance.config.cat.smoothscroll=平滑滚动
+qzuilibenhance.config.smoothscroll.enabled=平滑滚动
+qzuilibenhance.config.smoothscroll.enabled.tooltip=原版列表平滑滚动。
+qzuilibenhance.config.smoothscroll.factor=平滑系数
+qzuilibenhance.config.smoothscroll.factor.tooltip=平滑系数(越大越快)。
+
+qzuilibenhance.config.cat.screentransition=界面切换
+qzuilibenhance.config.screentransition.enabled=切换动画
+qzuilibenhance.config.screentransition.enabled.tooltip=界面打开/关闭动画。
+qzuilibenhance.config.screentransition.durationMs=时长
+qzuilibenhance.config.screentransition.durationMs.tooltip=动画时长(ms)。
+qzuilibenhance.config.screentransition.offset=位移
+qzuilibenhance.config.screentransition.offset.tooltip=位移幅度(px)。
+qzuilibenhance.config.screentransition.scale=缩放
+qzuilibenhance.config.screentransition.scale.tooltip=位移缩放。
+
+qzuilibenhance.config.cat.zoom=缩放
+qzuilibenhance.config.zoom.enabled=启用缩放
+qzuilibenhance.config.zoom.enabled.tooltip=按住按键缩放。
+qzuilibenhance.config.zoom.factor=缩放倍率
+qzuilibenhance.config.zoom.factor.tooltip=缩放倍率。
+qzuilibenhance.config.zoom.smooth=平滑缩放
+qzuilibenhance.config.zoom.smooth.tooltip=平滑过渡。
+qzuilibenhance.config.zoom.speed=过渡速度
+qzuilibenhance.config.zoom.speed.tooltip=过渡速度。
+qzuilibenhance.config.zoom.sensitivity=灵敏度减速
+qzuilibenhance.config.zoom.sensitivity.tooltip=缩放时灵敏度额外减速系数(越大越慢)。
+qzuilibenhance.config.zoom.keyCode=按键码
+qzuilibenhance.config.zoom.keyCode.tooltip=触发缩放的 LWJGL 键码(默认 46=C)。
+
+qzuilibenhance.config.cat.chat=聊天
+qzuilibenhance.config.chat.smoothEnabled=消息平滑
+qzuilibenhance.config.chat.smoothEnabled.tooltip=新聊天消息淡入/滑入。
+qzuilibenhance.config.chat.durationMs=淡入时长
+qzuilibenhance.config.chat.durationMs.tooltip=淡入时长(ms)。
+qzuilibenhance.config.chat.offset=滑入位移
+qzuilibenhance.config.chat.offset.tooltip=滑入位移(px)。
+qzuilibenhance.config.chat.headsEnabled=聊天头像
+qzuilibenhance.config.chat.headsEnabled.tooltip=在聊天行显示发送者皮肤头像。
+qzuilibenhance.config.chat.headSize=头像尺寸
+qzuilibenhance.config.chat.headSize.tooltip=头像边长(px)。
+qzuilibenhance.config.chat.headGap=头像间距
+qzuilibenhance.config.chat.headGap.tooltip=头像与文字间距(px)。
+
+qzuilibenhance.config.cat.performance=性能
+qzuilibenhance.config.performance.unfocusedFramerate=失焦降帧
+qzuilibenhance.config.performance.unfocusedFramerate.tooltip=窗口失焦时降低帧率。
+qzuilibenhance.config.performance.unfocusedFramerateLimit=失焦帧率上限
+qzuilibenhance.config.performance.unfocusedFramerateLimit.tooltip=失焦时的帧率上限。
+qzuilibenhance.config.performance.unfocusedVolume=失焦降音量
+qzuilibenhance.config.performance.unfocusedVolume.tooltip=窗口失焦时降低音量。
+qzuilibenhance.config.performance.unfocusedVolumeFactor=失焦音量系数
+qzuilibenhance.config.performance.unfocusedVolumeFactor.tooltip=失焦时音量倍率。
+
+qzuilibenhance.config.cat.ui=界面
+qzuilibenhance.config.ui.textUndoEnabled=文本撤销/重做
+qzuilibenhance.config.ui.textUndoEnabled.tooltip=文本框 Ctrl+Z / Ctrl+Y。
+qzuilibenhance.config.ui.textUndoLimit=撤销步数上限
+qzuilibenhance.config.ui.textUndoLimit.tooltip=撤销历史最大步数。
+qzuilibenhance.config.ui.pauseContainers=开容器暂停
+qzuilibenhance.config.ui.pauseContainers.tooltip=单机打开容器界面时暂停世界。
+
+qzuilibenhance.config.cat.emoji=表情
+qzuilibenhance.config.emoji.enabled=Emoji 短代码
+qzuilibenhance.config.emoji.enabled.tooltip=聊天中把 :name: 短代码转为 emoji（需系统 emoji 字体）。
+
+qzuilibenhance.config.cat.textselection=文本选中
+qzuilibenhance.config.textselection.selectionEnabled=自定义选中高亮
+qzuilibenhance.config.textselection.selectionEnabled.tooltip=替换原版 XOR 蓝色选中框。
+qzuilibenhance.config.textselection.selectionColor=选中颜色
+qzuilibenhance.config.textselection.selectionColor.tooltip=选中高亮颜色(RGB)。
+qzuilibenhance.config.textselection.selectionAlpha=选中不透明度
+qzuilibenhance.config.textselection.selectionAlpha.tooltip=选中高亮不透明度(0-255)。
+
+qzuilibenhance.md.nav.home=主页
+qzuilibenhance.md.nav.addon=附属增强
+qzuilibenhance.md.nav.qzuilib=QzUILib
+qzuilibenhance.md.tab.general=常规
+qzuilibenhance.md.tab.fontsystem=字体系统
+qzuilibenhance.md.tab.fontsize=字号
+qzuilibenhance.md.qzuilib.desc=编辑 QzUILib 自身的 qzuilib-modern.yaml：聊天框形态、选择器密度、字体排序与字号。
+qzuilibenhance.md.qzuilib.restartHint=部分改动（聊天框形态、字体）需重启游戏后生效。
+qzuilibenhance.md.qzuilib.missing=未找到 qzuilib-modern.yaml。
+
+qzuilibenhance.qzuilib.chatFrame=聊天框形态
+qzuilibenhance.qzuilib.chatFrame.tooltip=QzUILib 聊天框样式。
+qzuilibenhance.qzuilib.chatFrame.custom=自定义
+qzuilibenhance.qzuilib.chatFrame.vanilla=原版
+qzuilibenhance.qzuilib.pickerDensity=选择器密度
+qzuilibenhance.qzuilib.pickerDensity.tooltip=选择器面板密度档位。
+qzuilibenhance.qzuilib.pickerDensity.auto=自动
+qzuilibenhance.qzuilib.pickerDensity.compact=紧凑
+qzuilibenhance.qzuilib.pickerDensity.standard=标准
+qzuilibenhance.qzuilib.pickerDensity.roomy=宽松
+qzuilibenhance.qzuilib.glyphGenerationSize=字形分辨率
+qzuilibenhance.qzuilib.glyphGenerationSize.tooltip=字形图集生成分辨率；调高更清晰但更耗显存。
+qzuilibenhance.qzuilib.gameCharSize=游戏字号
+qzuilibenhance.qzuilib.gameCharSize.tooltip=原版字符默认显示字号，同时是宽度与行高折算基准。

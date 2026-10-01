@@ -1,0 +1,60 @@
+package com.gtnh.qzuilibenhance.mixin.early;
+
+import org.lwjgl.opengl.GL11;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import com.gtnh.qzuilibenhance.vanilla.UiConfig;
+
+import net.minecraft.client.gui.GuiTextField;
+import net.minecraft.client.renderer.Tessellator;
+
+/**
+ * 用半透明浅蓝填充替换原版 {@code drawCursorVertical} 的 XOR 蓝色选中框（风格参照 ModernUI EditBox，
+ * 其选中色为 0x3833B5E5，无白边）。
+ */
+@Mixin(GuiTextField.class)
+public class MixinGuiTextFieldSelection {
+
+    @Shadow
+    public int xPosition;
+    @Shadow
+    public int width;
+
+    @Inject(method = "drawCursorVertical", at = @At("HEAD"), cancellable = true)
+    private void qzuilib$selection(int x1, int y1, int x2, int y2, CallbackInfo ci) {
+        if (!UiConfig.selectionEnabled) {
+            return;
+        }
+        int left = Math.min(x1, x2);
+        int right = Math.max(x1, x2);
+        int top = Math.min(y1, y2);
+        int bottom = Math.max(y1, y2);
+        int maxX = this.xPosition + this.width;
+        if (left > maxX) {
+            left = maxX;
+        }
+        if (right > maxX) {
+            right = maxX;
+        }
+
+        Tessellator tessellator = Tessellator.instance;
+        GL11.glEnable(GL11.GL_BLEND);
+        GL11.glDisable(GL11.GL_TEXTURE_2D);
+        GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+        tessellator.startDrawingQuads();
+        tessellator.setColorRGBA_I(UiConfig.selectionColor, UiConfig.selectionAlpha);
+        tessellator.addVertex((double) left, (double) bottom, 0.0D);
+        tessellator.addVertex((double) right, (double) bottom, 0.0D);
+        tessellator.addVertex((double) right, (double) top, 0.0D);
+        tessellator.addVertex((double) left, (double) top, 0.0D);
+        tessellator.draw();
+        GL11.glEnable(GL11.GL_TEXTURE_2D);
+        GL11.glDisable(GL11.GL_BLEND);
+
+        ci.cancel();
+    }
+}

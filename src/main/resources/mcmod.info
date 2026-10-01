@@ -1,0 +1,11 @@
+[
+  {
+    "modid": "${modId}",
+    "name": "${modName}",
+    "description": "QzUILib addon: rounded tooltips, smooth scroll/transitions, chat heads, zoom, text undo/redo and more.",
+    "version": "1.0",
+    "mcversion": "${minecraftVersion}",
+    "authorList": ["nhx9605"],
+    "dependencies": ["qz_uilib"]
+  }
+]
