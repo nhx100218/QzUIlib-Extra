@@ -38,9 +38,9 @@ A client-side visual/UX addon for **QzUILib** on GTNH (Minecraft 1.7.10). It lay
 
 ## 🌟 Highlights
 
-- **Modern Material 3 config screen** — icon + text left navigation, wrapping top tabs, rounded field cards, switches, sliders, segmented buttons and dropdowns, plus a bottom Cancel / Apply / Done bar. All controls are hand-drawn and localized (`en_US` / `zh_CN`).
-- **QzUILib section in the config screen** — one navigation entry that reads/writes QzUILib's own `config/qzuilib-modern.yaml` (chat frame, picker density, font sort order and font sizes) without touching QzUILib's source.
-- **Bundled fonts** — Inter Frozen and Source Han Sans CN are shipped and auto-extracted; a real italic face is included for render-time oblique.
+- **Interface + Animation Optimization**: Based on Smooth GUI, bring back animations to version 1.7.10, and adopt zoomfiy as the reference, add smooth zooming;
+- **Prompt Box Optimization**: Add rounded corners, bring back the modernUI features to version 1.7.10;
+- **Built-in Fonts**: Distribute Inter Frozen and SimSun CN with the mod, and automatically release them; also provide true italic fonts for use in the rendering period for slanting.
 
 ## ✨ Features
 
