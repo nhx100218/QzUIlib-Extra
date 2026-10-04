@@ -18,7 +18,7 @@ public class ConfigKeyHandler {
                     && GuiScreen.isCtrlKeyDown()) {
                 Minecraft mc = Minecraft.getMinecraft();
                 if (mc.currentScreen == null) {
-                    mc.displayGuiScreen(new com.gtnh.qzuilibenhance.client.md.ModernConfigScreen(null));
+                    mc.displayGuiScreen(new QzEnhanceConfigScreen(null));
                 }
             }
         } catch (Throwable ignored) {

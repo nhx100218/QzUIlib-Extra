@@ -19,7 +19,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
         name = "Qz UILib Enhance",
         acceptedMinecraftVersions = "[1.7.10]",
         guiFactory = "com.gtnh.qzuilibenhance.client.EnhanceGuiFactory",
-        dependencies = "after:qz_uilib")
+        dependencies = "required-after:qz_uilib")
 public class MyMod {
 
     public static final String MODID = "qzuilibenhance";
