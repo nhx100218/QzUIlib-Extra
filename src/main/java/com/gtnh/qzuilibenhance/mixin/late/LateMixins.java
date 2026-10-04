@@ -57,6 +57,7 @@ public class LateMixins implements ILateMixinLoader {
             }
             if (has.test("NotEnoughItems")) {
                 mixins.add("nei.MixinFormattedTextFieldSelection");
+                mixins.add("nei.MixinRecipeTooltipLineHandler");
             }
             if (has.test("TConstruct")) {
                 mixins.add("tconstruct.MixinSmelteryGui");
