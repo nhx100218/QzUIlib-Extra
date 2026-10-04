@@ -32,7 +32,19 @@ public class MixinNeiTooltipComponentCompat {
         }
         java.awt.Dimension size = lineHandler.getSize();
         int w = size == null ? 0 : size.width;
-        int offset = (width - w) / 2;
+        // 配方预览通常独占一个 section，此时传入的 width 等于面板宽度（偏移为 0），
+        // 因此改用整个 tooltip 的内容宽度来居中。
+        int targetWidth = width;
+        try {
+            if (ctx != null && ctx.getTooltipSize() != null) {
+                targetWidth = Math.max(width, ctx.getTooltipSize().width - 8);
+            }
+        } catch (Throwable ignored) {
+        }
+        int offset = (targetWidth - w) / 2;
+        if (offset < 0) {
+            offset = 0;
+        }
         lineHandler.draw(x + offset, y);
         ci.cancel();
     }
