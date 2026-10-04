@@ -1,6 +1,8 @@
 package com.gtnh.qzuilibenhance;
 
 import java.io.File;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
@@ -56,9 +58,30 @@ public final class Config {
         try {
             ConfigManager manager = ConfigManager.bootstrap(yaml, schema);
             apply(manager.authority());
+            healStaleFile(yaml, manager);
             MyMod.LOG.info("附属增强配置已加载: {}", yaml.getAbsolutePath());
+            MyMod.LOG.info("平滑滚动: enabled={}, list={}/{}, chat={}/{}, creative={}/{}, text={}/{}",
+                    Boolean.valueOf(SmoothScrollConfig.enabled),
+                    Integer.valueOf(SmoothScrollConfig.listSmoothness), Integer.valueOf(SmoothScrollConfig.listAmount),
+                    Integer.valueOf(SmoothScrollConfig.chatSmoothness), Integer.valueOf(SmoothScrollConfig.chatAmount),
+                    Integer.valueOf(SmoothScrollConfig.creativeSmoothness), Integer.valueOf(SmoothScrollConfig.creativeAmount),
+                    Integer.valueOf(SmoothScrollConfig.textSmoothness), Integer.valueOf(SmoothScrollConfig.textAmount));
         } catch (ConfigException e) {
             MyMod.LOG.error("附属增强配置加载失败，保留当前默认值", e);
+        }
+    }
+
+    /** 旧版 YAML 缺少当前 schema 字段时，把它补全写回（幂等）。 */
+    private static void healStaleFile(File yaml, ConfigManager manager) {
+        try {
+            String text = new String(Files.readAllBytes(yaml.toPath()), StandardCharsets.UTF_8);
+            if (text.contains("listSmoothness")) {
+                return;
+            }
+            manager.save(manager.openDraft());
+            MyMod.LOG.info("已把 qzuilibenhance.yaml 升级为当前 schema（补全平滑滚动字段）");
+        } catch (Throwable failure) {
+            MyMod.LOG.warn("升级 qzuilibenhance.yaml 失败", failure);
         }
     }
 
@@ -92,7 +115,15 @@ public final class Config {
                 .section("smoothscroll")
                     .title(tr.apply("qzuilibenhance.config.cat.smoothscroll"))
                     .bool("enabled").defaultValue(SmoothScrollConfig.enabled).label(l(tr, "smoothscroll", "enabled")).helper(h(tr, "smoothscroll", "enabled")).build()
-                    .number("factor").defaultValue(Double.valueOf(SmoothScrollConfig.factor)).range(0.05, 1).slider().label(l(tr, "smoothscroll", "factor")).helper(h(tr, "smoothscroll", "factor")).build()
+                    .integer("listSmoothness").defaultValue(Long.valueOf(SmoothScrollConfig.listSmoothness)).range(0, 100).slider().label(l(tr, "smoothscroll", "listSmoothness")).helper(h(tr, "smoothscroll", "listSmoothness")).build()
+                    .integer("listAmount").defaultValue(Long.valueOf(SmoothScrollConfig.listAmount)).range(0, 200).slider().label(l(tr, "smoothscroll", "listAmount")).helper(h(tr, "smoothscroll", "listAmount")).build()
+                    .integer("chatSmoothness").defaultValue(Long.valueOf(SmoothScrollConfig.chatSmoothness)).range(0, 100).slider().label(l(tr, "smoothscroll", "chatSmoothness")).helper(h(tr, "smoothscroll", "chatSmoothness")).build()
+                    .integer("chatAmount").defaultValue(Long.valueOf(SmoothScrollConfig.chatAmount)).range(0, 200).slider().label(l(tr, "smoothscroll", "chatAmount")).helper(h(tr, "smoothscroll", "chatAmount")).build()
+                    .integer("chatOpenSmoothness").defaultValue(Long.valueOf(SmoothScrollConfig.chatOpenSmoothness)).range(0, 100).slider().label(l(tr, "smoothscroll", "chatOpenSmoothness")).helper(h(tr, "smoothscroll", "chatOpenSmoothness")).build()
+                    .integer("creativeSmoothness").defaultValue(Long.valueOf(SmoothScrollConfig.creativeSmoothness)).range(0, 100).slider().label(l(tr, "smoothscroll", "creativeSmoothness")).helper(h(tr, "smoothscroll", "creativeSmoothness")).build()
+                    .integer("creativeAmount").defaultValue(Long.valueOf(SmoothScrollConfig.creativeAmount)).range(0, 200).slider().label(l(tr, "smoothscroll", "creativeAmount")).helper(h(tr, "smoothscroll", "creativeAmount")).build()
+                    .integer("textSmoothness").defaultValue(Long.valueOf(SmoothScrollConfig.textSmoothness)).range(0, 100).slider().label(l(tr, "smoothscroll", "textSmoothness")).helper(h(tr, "smoothscroll", "textSmoothness")).build()
+                    .integer("textAmount").defaultValue(Long.valueOf(SmoothScrollConfig.textAmount)).range(0, 300).slider().label(l(tr, "smoothscroll", "textAmount")).helper(h(tr, "smoothscroll", "textAmount")).build()
                 .endSection()
                 .section("screentransition")
                     .title(tr.apply("qzuilibenhance.config.cat.screentransition"))
@@ -112,9 +143,6 @@ public final class Config {
                 .endSection()
                 .section("chat")
                     .title(tr.apply("qzuilibenhance.config.cat.chat"))
-                    .bool("smoothEnabled").defaultValue(com.gtnh.qzuilibenhance.vanilla.ChatConfig.smoothEnabled).label(l(tr, "chat", "smoothEnabled")).helper(h(tr, "chat", "smoothEnabled")).build()
-                    .integer("durationMs").defaultValue(Long.valueOf(com.gtnh.qzuilibenhance.vanilla.ChatConfig.durationMs)).range(0, 2000).slider().label(l(tr, "chat", "durationMs")).helper(h(tr, "chat", "durationMs")).build()
-                    .number("offset").defaultValue(Double.valueOf(com.gtnh.qzuilibenhance.vanilla.ChatConfig.offset)).range(0, 32).slider().label(l(tr, "chat", "offset")).helper(h(tr, "chat", "offset")).build()
                     .bool("headsEnabled").defaultValue(com.gtnh.qzuilibenhance.vanilla.ChatConfig.headsEnabled).label(l(tr, "chat", "headsEnabled")).helper(h(tr, "chat", "headsEnabled")).build()
                     .number("headSize").defaultValue(Double.valueOf(com.gtnh.qzuilibenhance.vanilla.ChatConfig.headSize)).range(4, 16).slider().label(l(tr, "chat", "headSize")).helper(h(tr, "chat", "headSize")).build()
                     .number("headGap").defaultValue(Double.valueOf(com.gtnh.qzuilibenhance.vanilla.ChatConfig.headGap)).range(0, 8).slider().label(l(tr, "chat", "headGap")).helper(h(tr, "chat", "headGap")).build()
@@ -125,6 +153,7 @@ public final class Config {
                     .integer("unfocusedFramerateLimit").defaultValue(Long.valueOf(com.gtnh.qzuilibenhance.vanilla.UnfocusedConfig.framerateLimit)).range(1, 120).slider().label(l(tr, "performance", "unfocusedFramerateLimit")).helper(h(tr, "performance", "unfocusedFramerateLimit")).build()
                     .bool("unfocusedVolume").defaultValue(com.gtnh.qzuilibenhance.vanilla.UnfocusedConfig.volumeEnabled).label(l(tr, "performance", "unfocusedVolume")).helper(h(tr, "performance", "unfocusedVolume")).build()
                     .number("unfocusedVolumeFactor").defaultValue(Double.valueOf(com.gtnh.qzuilibenhance.vanilla.UnfocusedConfig.volumeFactor)).range(0, 1).slider().label(l(tr, "performance", "unfocusedVolumeFactor")).helper(h(tr, "performance", "unfocusedVolumeFactor")).build()
+                    .bool("preload").defaultValue(Boolean.TRUE).label(l(tr, "performance", "preload")).helper(h(tr, "performance", "preload")).build()
                 .endSection()
                 .section("ui")
                     .title(tr.apply("qzuilibenhance.config.cat.ui"))
@@ -187,7 +216,15 @@ public final class Config {
         TooltipConfig.wailaBorderWidth = (float) authority.getNumber("waila.borderWidth");
 
         SmoothScrollConfig.enabled = authority.getBool("smoothscroll.enabled");
-        SmoothScrollConfig.factor = (float) authority.getNumber("smoothscroll.factor");
+        SmoothScrollConfig.listSmoothness = (int) Math.round(authority.getNumber("smoothscroll.listSmoothness"));
+        SmoothScrollConfig.listAmount = (int) Math.round(authority.getNumber("smoothscroll.listAmount"));
+        SmoothScrollConfig.chatSmoothness = (int) Math.round(authority.getNumber("smoothscroll.chatSmoothness"));
+        SmoothScrollConfig.chatAmount = (int) Math.round(authority.getNumber("smoothscroll.chatAmount"));
+        SmoothScrollConfig.chatOpenSmoothness = (int) Math.round(authority.getNumber("smoothscroll.chatOpenSmoothness"));
+        SmoothScrollConfig.creativeSmoothness = (int) Math.round(authority.getNumber("smoothscroll.creativeSmoothness"));
+        SmoothScrollConfig.creativeAmount = (int) Math.round(authority.getNumber("smoothscroll.creativeAmount"));
+        SmoothScrollConfig.textSmoothness = (int) Math.round(authority.getNumber("smoothscroll.textSmoothness"));
+        SmoothScrollConfig.textAmount = (int) Math.round(authority.getNumber("smoothscroll.textAmount"));
 
         ScreenTransition.enabled = authority.getBool("screentransition.enabled");
         ScreenTransition.durationMs = (int) Math.round(authority.getNumber("screentransition.durationMs"));
@@ -201,9 +238,6 @@ public final class Config {
         com.gtnh.qzuilibenhance.vanilla.ZoomConfig.sensitivity = (float) authority.getNumber("zoom.sensitivity");
         com.gtnh.qzuilibenhance.vanilla.ZoomConfig.keyCode = (int) Math.round(authority.getNumber("zoom.keyCode"));
 
-        com.gtnh.qzuilibenhance.vanilla.ChatConfig.smoothEnabled = authority.getBool("chat.smoothEnabled");
-        com.gtnh.qzuilibenhance.vanilla.ChatConfig.durationMs = (int) Math.round(authority.getNumber("chat.durationMs"));
-        com.gtnh.qzuilibenhance.vanilla.ChatConfig.offset = (float) authority.getNumber("chat.offset");
         com.gtnh.qzuilibenhance.vanilla.ChatConfig.headsEnabled = authority.getBool("chat.headsEnabled");
         com.gtnh.qzuilibenhance.vanilla.ChatConfig.headSize = (float) authority.getNumber("chat.headSize");
         com.gtnh.qzuilibenhance.vanilla.ChatConfig.headGap = (float) authority.getNumber("chat.headGap");
@@ -212,6 +246,7 @@ public final class Config {
         com.gtnh.qzuilibenhance.vanilla.UnfocusedConfig.framerateLimit = (int) Math.round(authority.getNumber("performance.unfocusedFramerateLimit"));
         com.gtnh.qzuilibenhance.vanilla.UnfocusedConfig.volumeEnabled = authority.getBool("performance.unfocusedVolume");
         com.gtnh.qzuilibenhance.vanilla.UnfocusedConfig.volumeFactor = (float) authority.getNumber("performance.unfocusedVolumeFactor");
+        com.gtnh.qzuilibenhance.client.PreloadService.enabled = authority.getBool("performance.preload");
 
         com.gtnh.qzuilibenhance.vanilla.UiConfig.textUndoEnabled = authority.getBool("ui.textUndoEnabled");
         com.gtnh.qzuilibenhance.vanilla.UiConfig.textUndoLimit = (int) Math.round(authority.getNumber("ui.textUndoLimit"));

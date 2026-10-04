@@ -15,6 +15,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import com.gtnh.qzuilibenhance.vanilla.ChatConfig;
+import com.gtnh.qzuilibenhance.vanilla.ChatScrollSmooth;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.AbstractClientPlayer;
@@ -53,10 +54,13 @@ public class MixinGuiNewChat {
     @Redirect(method = "drawChat", at = @At(value = "INVOKE",
             target = "Lnet/minecraft/client/gui/FontRenderer;drawStringWithShadow(Ljava/lang/String;III)I"))
     private int qzuilib$drawLine(FontRenderer font, String text, int x, int y, int color) {
+        // 用原版为每行算好的透明度（新消息淡入 / 旧消息淡出），文字与头像同步淡入淡出。
+        int alphaBits = (color >>> 24) & 0xFF;
+        float alpha = alphaBits == 0 ? 1.0F : alphaBits / 255.0F;
         ChatLine line = qzuilib$line;
         int drawX = x;
         if (ChatConfig.headsEnabled && line != null) {
-            int headWidth = drawHead(line, text, x, y);
+            int headWidth = drawHead(line, text, x, y, alpha);
             if (headWidth > 0) {
                 drawX += headWidth;
             }
@@ -65,6 +69,11 @@ public class MixinGuiNewChat {
                 ? com.gtnh.qzuilibenhance.emoji.EmojiShortcodes.replace(text)
                 : text;
         return font.drawStringWithShadow(shown, drawX, y, color);
+    }
+
+    @Inject(method = "printChatMessage", at = @At("RETURN"))
+    private void qzuilib$newMessage(net.minecraft.util.IChatComponent component, CallbackInfo ci) {
+        ChatScrollSmooth.onNewMessage();
     }
 
     private static String qzuilib$sender(ChatLine line, String text) {
@@ -109,7 +118,7 @@ public class MixinGuiNewChat {
     }
 
     /** 在行首绘制皮肤头部，返回占用宽度（0 表示未绘制）。 */
-    private static int drawHead(ChatLine line, String text, int x, int y) {
+    private static int drawHead(ChatLine line, String text, int x, int y, float alpha) {
         String name = qzuilib$sender(line, text);
         if (name == null) {
             return 0;
@@ -147,7 +156,7 @@ public class MixinGuiNewChat {
             GL11.glEnable(GL11.GL_TEXTURE_2D);
             GL11.glEnable(GL11.GL_BLEND);
             GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
-            GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+            GL11.glColor4f(1.0F, 1.0F, 1.0F, alpha);
             Tessellator tessellator = Tessellator.instance;
             tessellator.startDrawingQuads();
             tessellator.addVertexWithUV(x, top + size, 0.0D, u0, v1);

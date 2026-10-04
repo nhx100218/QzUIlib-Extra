@@ -48,6 +48,9 @@ public class LateMixins implements ILateMixinLoader {
                 mixins.add("ct.MixinCtTooltipDecorator");
                 mixins.add("ct.MixinCtTextComponent");
             }
+            if (has.test("chromatictooltipscompat")) {
+                mixins.add("ct.MixinNeiTooltipComponentCompat");
+            }
             if (has.test("betterquesting")) {
                 mixins.add("bq.MixinBqTooltip");
                 mixins.add("bq.MixinBqSceneTransition");

@@ -48,8 +48,24 @@ qzuilibenhance.config.waila.borderWidth.tooltip=Waila 边框宽度。
 qzuilibenhance.config.cat.smoothscroll=平滑滚动
 qzuilibenhance.config.smoothscroll.enabled=平滑滚动
 qzuilibenhance.config.smoothscroll.enabled.tooltip=原版列表平滑滚动。
-qzuilibenhance.config.smoothscroll.factor=平滑系数
-qzuilibenhance.config.smoothscroll.factor.tooltip=平滑系数(越大越快)。
+qzuilibenhance.config.smoothscroll.listSmoothness=列表平滑度
+qzuilibenhance.config.smoothscroll.listSmoothness.tooltip=原版列表滚动缓动。0=关闭，越大越慢，100=不再滚动。
+qzuilibenhance.config.smoothscroll.listAmount=列表滚动量
+qzuilibenhance.config.smoothscroll.listAmount.tooltip=列表每次滚轮像素量，0=自动（半行）。
+qzuilibenhance.config.smoothscroll.chatSmoothness=聊天平滑度
+qzuilibenhance.config.smoothscroll.chatSmoothness.tooltip=聊天栏滚动缓动。0=关闭，越大越慢，100=不再滚动。
+qzuilibenhance.config.smoothscroll.chatAmount=聊天滚动量
+qzuilibenhance.config.smoothscroll.chatAmount.tooltip=聊天每次滚轮像素量，0=自动。
+qzuilibenhance.config.smoothscroll.chatOpenSmoothness=聊天打开平滑度
+qzuilibenhance.config.smoothscroll.chatOpenSmoothness.tooltip=聊天栏打开时的滑入缓动。0=关闭，越大越慢。
+qzuilibenhance.config.smoothscroll.creativeSmoothness=创造栏平滑度
+qzuilibenhance.config.smoothscroll.creativeSmoothness.tooltip=创造模式物品栏滚动缓动。0=关闭，越大越慢，100=不再滚动。
+qzuilibenhance.config.smoothscroll.creativeAmount=创造栏滚动量
+qzuilibenhance.config.smoothscroll.creativeAmount.tooltip=创造模式物品栏每次滚轮像素量。
+qzuilibenhance.config.smoothscroll.textSmoothness=文本框平滑度
+qzuilibenhance.config.smoothscroll.textSmoothness.tooltip=文本框光标滚动缓动。0=关闭，越大越慢。
+qzuilibenhance.config.smoothscroll.textAmount=文本框滚动量
+qzuilibenhance.config.smoothscroll.textAmount.tooltip=文本框每次滚轮像素量。
 
 qzuilibenhance.config.cat.screentransition=界面切换
 qzuilibenhance.config.screentransition.enabled=切换动画
@@ -76,12 +92,6 @@ qzuilibenhance.config.zoom.keyCode=按键码
 qzuilibenhance.config.zoom.keyCode.tooltip=触发缩放的 LWJGL 键码(默认 46=C)。
 
 qzuilibenhance.config.cat.chat=聊天
-qzuilibenhance.config.chat.smoothEnabled=消息平滑
-qzuilibenhance.config.chat.smoothEnabled.tooltip=新聊天消息淡入/滑入。
-qzuilibenhance.config.chat.durationMs=淡入时长
-qzuilibenhance.config.chat.durationMs.tooltip=淡入时长(ms)。
-qzuilibenhance.config.chat.offset=滑入位移
-qzuilibenhance.config.chat.offset.tooltip=滑入位移(px)。
 qzuilibenhance.config.chat.headsEnabled=聊天头像
 qzuilibenhance.config.chat.headsEnabled.tooltip=在聊天行显示发送者皮肤头像。
 qzuilibenhance.config.chat.headSize=头像尺寸
@@ -98,6 +108,8 @@ qzuilibenhance.config.performance.unfocusedVolume=失焦降音量
 qzuilibenhance.config.performance.unfocusedVolume.tooltip=窗口失焦时降低音量。
 qzuilibenhance.config.performance.unfocusedVolumeFactor=失焦音量系数
 qzuilibenhance.config.performance.unfocusedVolumeFactor.tooltip=失焦时音量倍率。
+qzuilibenhance.config.performance.preload=加载时预热
+qzuilibenhance.config.performance.preload.tooltip=加载后一次性预热字体、着色器与物品图标（加载时会卡一下，之后更流畅）。
 
 qzuilibenhance.config.cat.ui=界面
 qzuilibenhance.config.ui.textUndoEnabled=文本撤销/重做

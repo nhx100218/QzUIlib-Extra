@@ -48,8 +48,24 @@ qzuilibenhance.config.waila.borderWidth.tooltip=Waila border width.
 qzuilibenhance.config.cat.smoothscroll=Smooth Scroll
 qzuilibenhance.config.smoothscroll.enabled=Smooth Scrolling
 qzuilibenhance.config.smoothscroll.enabled.tooltip=Smooth scrolling for vanilla lists.
-qzuilibenhance.config.smoothscroll.factor=Smooth Factor
-qzuilibenhance.config.smoothscroll.factor.tooltip=Smooth factor (higher is faster).
+qzuilibenhance.config.smoothscroll.listSmoothness=List Smoothness
+qzuilibenhance.config.smoothscroll.listSmoothness.tooltip=Scroll easing for vanilla lists. 0 = off, higher = slower, 100 = no scrolling.
+qzuilibenhance.config.smoothscroll.listAmount=List Scroll Amount
+qzuilibenhance.config.smoothscroll.listAmount.tooltip=Pixels per wheel notch for lists, 0 = auto (half a row).
+qzuilibenhance.config.smoothscroll.chatSmoothness=Chat Smoothness
+qzuilibenhance.config.smoothscroll.chatSmoothness.tooltip=Scroll easing for the chat. 0 = off, higher = slower, 100 = no scrolling.
+qzuilibenhance.config.smoothscroll.chatAmount=Chat Scroll Amount
+qzuilibenhance.config.smoothscroll.chatAmount.tooltip=Pixels per wheel notch for chat, 0 = auto.
+qzuilibenhance.config.smoothscroll.chatOpenSmoothness=Chat Opening Smoothness
+qzuilibenhance.config.smoothscroll.chatOpenSmoothness.tooltip=Slide-in easing when the chat opens. 0 = off, higher = slower.
+qzuilibenhance.config.smoothscroll.creativeSmoothness=Creative Smoothness
+qzuilibenhance.config.smoothscroll.creativeSmoothness.tooltip=Scroll easing for the creative inventory. 0 = off, higher = slower, 100 = no scrolling.
+qzuilibenhance.config.smoothscroll.creativeAmount=Creative Scroll Amount
+qzuilibenhance.config.smoothscroll.creativeAmount.tooltip=Pixels per wheel notch for the creative inventory.
+qzuilibenhance.config.smoothscroll.textSmoothness=Text Field Smoothness
+qzuilibenhance.config.smoothscroll.textSmoothness.tooltip=Horizontal easing when the text cursor scrolls. 0 = off, higher = slower.
+qzuilibenhance.config.smoothscroll.textAmount=Text Field Scroll Amount
+qzuilibenhance.config.smoothscroll.textAmount.tooltip=Pixels per wheel notch in text fields.
 
 qzuilibenhance.config.cat.screentransition=Screen Transition
 qzuilibenhance.config.screentransition.enabled=Transition Animation
@@ -76,12 +92,6 @@ qzuilibenhance.config.zoom.keyCode=Key Code
 qzuilibenhance.config.zoom.keyCode.tooltip=LWJGL key code to trigger zoom (default 46=C).
 
 qzuilibenhance.config.cat.chat=Chat
-qzuilibenhance.config.chat.smoothEnabled=Smooth Messages
-qzuilibenhance.config.chat.smoothEnabled.tooltip=Fade/slide in new chat messages.
-qzuilibenhance.config.chat.durationMs=Fade Duration
-qzuilibenhance.config.chat.durationMs.tooltip=Chat fade-in duration in ms.
-qzuilibenhance.config.chat.offset=Slide Offset
-qzuilibenhance.config.chat.offset.tooltip=Chat slide offset in px.
 qzuilibenhance.config.chat.headsEnabled=Chat Heads
 qzuilibenhance.config.chat.headsEnabled.tooltip=Show sender skin heads in chat.
 qzuilibenhance.config.chat.headSize=Head Size
@@ -98,6 +108,8 @@ qzuilibenhance.config.performance.unfocusedVolume=Lower Volume When Unfocused
 qzuilibenhance.config.performance.unfocusedVolume.tooltip=Lower volume when the window is unfocused.
 qzuilibenhance.config.performance.unfocusedVolumeFactor=Unfocused Volume Factor
 qzuilibenhance.config.performance.unfocusedVolumeFactor.tooltip=Volume multiplier when unfocused.
+qzuilibenhance.config.performance.preload=Warm Up on Load
+qzuilibenhance.config.performance.preload.tooltip=Warm up fonts, shaders and item icons once after loading (small hitch on load, smoother afterwards).
 
 qzuilibenhance.config.cat.ui=Interface
 qzuilibenhance.config.ui.textUndoEnabled=Text Undo/Redo

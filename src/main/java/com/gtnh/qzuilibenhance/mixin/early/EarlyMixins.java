@@ -35,9 +35,13 @@ public class EarlyMixins implements IEarlyMixinLoader, IFMLLoadingPlugin {
             mixins.add("MixinGameSettingsUnfocused");
             mixins.add("MixinGuiTextFieldUndo");
             mixins.add("MixinGuiContainerPause");
+            mixins.add("MixinGuiContainerCreativeSmoothScroll");
+            mixins.add("MixinGuiTextFieldSmoothScroll");
             mixins.add("MixinGuiTextFieldSelection");
             mixins.add("MixinMinecraftScreenPoke");
             mixins.add("MixinGuiIngameHotbarScroll");
+            mixins.add("MixinGuiHotbarTexture");
+            mixins.add("MixinInventoryPlayerHotbar");
             mixins.add("MixinGuiNewChatScroll");
         }
         return mixins;
