@@ -76,7 +76,12 @@ public class QzEnhanceConfigScreen extends McScreenBridge {
             throw new RuntimeException("QzUILib Enhance 配置加载失败: " + yaml, e);
         }
         PlatformInputSource input = new LwjglInputSource(new LwjglStateReader());
-        ConfigScreen surface = ConfigUI.buildScreen(manager, input, registry -> {});
+        ConfigScreen surface = ConfigUI.buildScreen(manager, input, registry -> {
+            // 选中框偏移显示固定 2 位小数（-1.50 而不是 -1.5）。
+            TwoDecimalNumberRenderer twoDecimal = new TwoDecimalNumberRenderer();
+            registry.registerPath("textselection.selectionOffsetX", twoDecimal);
+            registry.registerPath("textselection.selectionOffsetY", twoDecimal);
+        });
         surface.runtime().setFontScale(fontScalePercentFromGuiScale(mc));
         applyFullWidthLayout(surface);
         removeStatusSummary(surface);

@@ -130,6 +130,10 @@ qzuilibenhance.config.textselection.selectionColor=选中颜色
 qzuilibenhance.config.textselection.selectionColor.tooltip=选中高亮颜色(RGB)。
 qzuilibenhance.config.textselection.selectionAlpha=选中不透明度
 qzuilibenhance.config.textselection.selectionAlpha.tooltip=选中高亮不透明度(0-255)。
+qzuilibenhance.config.textselection.selectionOffsetX=选中框 X 偏移
+qzuilibenhance.config.textselection.selectionOffsetX.tooltip=选中框水平方向整体偏移像素。
+qzuilibenhance.config.textselection.selectionOffsetY=选中框 Y 偏移
+qzuilibenhance.config.textselection.selectionOffsetY.tooltip=选中框垂直方向整体偏移像素（负值向上）。
 
 qzuilibenhance.md.nav.home=主页
 qzuilibenhance.md.nav.addon=附属增强

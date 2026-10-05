@@ -9,6 +9,9 @@ public final class UiConfig {
     public static volatile boolean selectionEnabled = true;
     public static volatile int selectionColor = 0x33B5E5;
     public static volatile int selectionAlpha = 0x38;
+    /** 选中框整体像素偏移（用于对齐 QzUILib 替换后的字体字形；正值向右/向下，负值向左/向上；支持小数）。 */
+    public static volatile float selectionOffsetX = 0.30F;
+    public static volatile float selectionOffsetY = -1.75F;
 
     private UiConfig() {}
 }

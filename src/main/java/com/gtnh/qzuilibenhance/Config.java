@@ -166,6 +166,8 @@ public final class Config {
                     .bool("selectionEnabled").defaultValue(com.gtnh.qzuilibenhance.vanilla.UiConfig.selectionEnabled).label(l(tr, "textselection", "selectionEnabled")).helper(h(tr, "textselection", "selectionEnabled")).build()
                     .integer("selectionColor").defaultValue(Long.valueOf(com.gtnh.qzuilibenhance.vanilla.UiConfig.selectionColor)).range(0, 0xFFFFFF).slider().label(l(tr, "textselection", "selectionColor")).helper(h(tr, "textselection", "selectionColor")).build()
                     .integer("selectionAlpha").defaultValue(Long.valueOf(com.gtnh.qzuilibenhance.vanilla.UiConfig.selectionAlpha)).range(0, 255).slider().label(l(tr, "textselection", "selectionAlpha")).helper(h(tr, "textselection", "selectionAlpha")).build()
+                    .number("selectionOffsetX").defaultValue(Double.valueOf((double) com.gtnh.qzuilibenhance.vanilla.UiConfig.selectionOffsetX)).range(-16, 16).input().label(l(tr, "textselection", "selectionOffsetX")).helper(h(tr, "textselection", "selectionOffsetX")).build()
+                    .number("selectionOffsetY").defaultValue(Double.valueOf((double) com.gtnh.qzuilibenhance.vanilla.UiConfig.selectionOffsetY)).range(-16, 16).input().label(l(tr, "textselection", "selectionOffsetY")).helper(h(tr, "textselection", "selectionOffsetY")).build()
                 .endSection()
                 .section("emoji")
                     .title(tr.apply("qzuilibenhance.config.cat.emoji"))
@@ -255,6 +257,8 @@ public final class Config {
         com.gtnh.qzuilibenhance.vanilla.UiConfig.selectionEnabled = authority.getBool("textselection.selectionEnabled");
         com.gtnh.qzuilibenhance.vanilla.UiConfig.selectionColor = (int) Math.round(authority.getNumber("textselection.selectionColor"));
         com.gtnh.qzuilibenhance.vanilla.UiConfig.selectionAlpha = (int) Math.round(authority.getNumber("textselection.selectionAlpha"));
+        com.gtnh.qzuilibenhance.vanilla.UiConfig.selectionOffsetX = (float) authority.getNumber("textselection.selectionOffsetX");
+        com.gtnh.qzuilibenhance.vanilla.UiConfig.selectionOffsetY = (float) authority.getNumber("textselection.selectionOffsetY");
 
         com.gtnh.qzuilibenhance.vanilla.EmojiConfig.enabled = authority.getBool("emoji.enabled");
     }

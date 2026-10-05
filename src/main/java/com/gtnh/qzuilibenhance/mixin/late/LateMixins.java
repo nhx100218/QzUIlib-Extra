@@ -54,6 +54,9 @@ public class LateMixins implements ILateMixinLoader {
             if (has.test("betterquesting")) {
                 mixins.add("bq.MixinBqTooltip");
                 mixins.add("bq.MixinBqSceneTransition");
+                mixins.add("bq.MixinBqPanelTextField");
+                mixins.add("bq.MixinBqRenderUtils");
+                mixins.add("bq.MixinBqScreenCanvas");
             }
             if (has.test("NotEnoughItems")) {
                 mixins.add("nei.MixinFormattedTextFieldSelection");

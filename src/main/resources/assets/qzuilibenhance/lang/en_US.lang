@@ -130,6 +130,10 @@ qzuilibenhance.config.textselection.selectionColor=Selection Color
 qzuilibenhance.config.textselection.selectionColor.tooltip=Selection highlight color (RGB).
 qzuilibenhance.config.textselection.selectionAlpha=Selection Opacity
 qzuilibenhance.config.textselection.selectionAlpha.tooltip=Selection highlight alpha (0-255).
+qzuilibenhance.config.textselection.selectionOffsetX=Selection X Offset
+qzuilibenhance.config.textselection.selectionOffsetX.tooltip=Shift the selection box horizontally in pixels.
+qzuilibenhance.config.textselection.selectionOffsetY=Selection Y Offset
+qzuilibenhance.config.textselection.selectionOffsetY.tooltip=Shift the selection box vertically in pixels (negative moves up).
 
 qzuilibenhance.md.nav.home=Home
 qzuilibenhance.md.nav.addon=Enhance

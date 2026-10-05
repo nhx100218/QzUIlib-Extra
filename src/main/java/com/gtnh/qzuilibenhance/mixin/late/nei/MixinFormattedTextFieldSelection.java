@@ -23,10 +23,11 @@ public class MixinFormattedTextFieldSelection {
         if (!UiConfig.selectionEnabled) {
             return;
         }
-        int left = Math.min(x1, x2);
-        int right = Math.max(x1, x2);
-        int top = Math.min(y1, y2);
-        int bottom = Math.max(y1, y2);
+        // 整体按配置偏移对齐 QzUILib 替换后的字体字形（见 UiConfig.selectionOffsetX/Y，支持小数）。
+        float left = Math.min(x1, x2) + UiConfig.selectionOffsetX;
+        float right = Math.max(x1, x2) + UiConfig.selectionOffsetX;
+        float top = Math.min(y1, y2) + UiConfig.selectionOffsetY;
+        float bottom = Math.max(y1, y2) + UiConfig.selectionOffsetY;
         int maxX = ((GuiTextField) (Object) this).xPosition + ((GuiTextField) (Object) this).width;
         if (left > maxX) {
             left = maxX;
